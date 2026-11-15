@@ -1,0 +1,1492 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="通过示例学习 [Java 25] 语言">
+      
+      
+        <meta name="author" content="Serge Tahé">
+      
+      
+        <link rel="canonical" href="https://stahe.github.io/zh-java-oct-2026/%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html">
+      
+      
+        <link rel="prev" href="%E7%AE%80%E4%BB%8B.html">
+      
+      
+        <link rel="next" href="java-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html">
+      
+      
+        
+      
+      
+      <link rel="icon" href="assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>2. 搭建开发环境 - 通过示例学习 [Java 25] 语言</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="stylesheets/focus.css">
+    
+      <link rel="stylesheet" href="stylesheets/bidi.css">
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EBZC3JVJNR"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    var siteName = "通过示例学习 [Java 25] 语言";
+    gtag('config', 'G-EBZC3JVJNR', {
+        'page_title': siteName
+    });
+  </script>
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#2-搭建开发环境" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="index.html" title="通过示例学习 [Java 25] 语言" class="md-header__button md-logo" aria-label="通过示例学习 [Java 25] 语言" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            通过示例学习 [Java 25] 语言
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              2. 搭建开发环境
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至深色模式"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue" data-md-color-accent="purple"  aria-label="切换至浅色模式"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12s-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://stahe.github.io/zh-java-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="通过示例学习 [Java 25] 语言" class="md-nav__button md-logo" aria-label="通过示例学习 [Java 25] 语言" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    通过示例学习 [Java 25] 语言
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://stahe.github.io/zh-java-oct-2026" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    欢迎
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%AE%80%E4%BB%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    1. 简介
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 搭建开发环境
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="%E6%90%AD%E5%BB%BA%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    2. 搭建开发环境
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#21-jdk-25" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1. JDK 25
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1. JDK 25">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#211-安装" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.1. 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#212-jdk-的命令" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.1.2. JDK 的命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#22-maven" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2. Maven
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2. Maven">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#221-安装" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.1. 安装
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#222-maven-命令" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.2.2. Maven 命令
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#23-编辑器" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3. 编辑器
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.3. 编辑器">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#231-intellij-idea" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.1. IntelliJ IDEA
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#232-vs-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.2. VS Code
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#233-eclipse" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.3.3. Eclipse
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#24-第一个程序紧凑源文件" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4. 第一个程序：紧凑源文件
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.4. 第一个程序：紧凑源文件">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#241-程序" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.4.1. 程序
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#25-maven-项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5. Maven 项目
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5. Maven 项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#251-项目结构" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.1. 项目结构
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#252-编译和执行" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.5.2. 编译和执行
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#26-多模块项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6. 多模块项目
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2.6. 多模块项目">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#261-聚合项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.1. 聚合项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#262-包含多个-main-方法的项目" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.6.2. 包含多个 main 方法的项目
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#27-文档中的示例" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2.7. 文档中的示例
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="java-%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    3. Java 语言基础
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E7%B1%BB-%E8%AE%B0%E5%BD%95-%E6%8E%A5%E5%8F%A3.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    4. 类、记录、接口
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%B8%B8%E7%94%A8%E7%9A%84-java-%E7%B1%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    5. 常用的 Java 类
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%88%86%E5%B1%82%E6%9E%B6%E6%9E%84.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    6. 分层架构
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%87%BD%E6%95%B0%E5%BC%8F%E6%8E%A5%E5%8F%A3-lambda-%E4%B8%8E%E4%BA%8B%E4%BB%B6.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    7. 函数式接口、Lambda 与事件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E6%89%A7%E8%A1%8C%E7%BA%BF%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    8. 执行线程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    9. 异步编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E4%BD%BF%E7%94%A8-jdbc-%E8%AE%BF%E9%97%AE%E6%95%B0%E6%8D%AE%E5%BA%93.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    10. 使用 JDBC 访问数据库
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="hibernate.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    11. Hibernate
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-%E7%BC%96%E7%A8%8B.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    12. Web 编程
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="web-%E6%9C%8D%E5%8A%A1.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    13. Web 服务
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E5%BB%B6%E4%BC%B8%E9%98%85%E8%AF%BB.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    14. 延伸阅读
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="%E9%99%84%E5%BD%95.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    15. 附录
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="2-搭建开发环境">2. <span style="color: #2e74b5">搭建开发环境</span></h1>
+<p>Java 开发人员的工作环境由三个相互独立的组成部分构成：</p>
+<ul>
+<li><strong>JDK</strong> （“Java Development Kit”）：<em>[javac]</em>编译器、虚拟机和运行程序的 <em>[java]</em>命令、Java SE 标准库，以及 <em>[jshell]</em> 或 <em>[jar]</em>等工具；</li>
+<li>项目<strong>构建</strong>工具，这里是 <strong>Maven</strong>：它下载项目所需的库、编译项目、运行测试并打包；</li>
+<li><strong>编辑器</strong> 或 <strong>IDE</strong> （集成开发环境）：<em>[IntelliJ IDEA]</em>、<em>[VS Code]</em> 配合 Java 扩展，或 <em>[Eclipse]</em>。IDE 以 JDK 为基础，并且可以读取 Maven 项目。</li>
+</ul>
+<p>本文档所有操作都使用 <em>[java]</em>、<em>[javac]</em>和 <em>[mvn]</em> 命令：无论你选择哪种编辑器，它们在 Windows、Linux 和 macOS 上的工作方式都相同。</p>
+<h2 id="21-jdk-25">2.1. <span style="color: #2e74b5">JDK 25</span></h2>
+<h3 id="211-安装">2.1.1. <span style="color: #1f4d78">安装</span></h3>
+<p>JDK 有多个发行版，它们都构建自 OpenJDK 源代码，就我们的目的而言是等价的。我们推荐 <strong>Eclipse Temurin</strong>，这是 Eclipse 基金会提供的免费开源发行版，可从<a href="https://adoptium.net/"><u><span style="color: #0563c1"> https://adoptium.net</span></u></a>下载：在那里选择版本 <strong>25—LTS</strong>，再选择操作系统和包类型（在 Windows 上是 <em>[.msi]</em>安装程序）。在 Windows 上，你也可以在终端（PowerShell 或命令提示符）中使用 <em>[winget]</em>包管理器安装：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1">1</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1"></a>winget install EclipseAdoptium.Temurin.25.JDK
+</code></pre></div></td></tr></table></div>
+<p>必须选择 <strong>JDK</strong> （它包含全部内容），而不是只选 JRE（它只能运行已经编译好的程序）。在 Windows 上安装时，请勾选将 JDK 添加到 <em>[PATH]</em> 并设置 <em>[JAVA_HOME]</em>环境变量的选项：Maven 和各种 IDE 会用它来定位 JDK。在 Linux 上，主流发行版的软件仓库中都提供 JDK（例如在 Ubuntu 上使用 <strong><em>[sudo apt install openjdk-25-jdk]</em></strong> ）。</p>
+<p>安装完成后，打开一个<strong>新的</strong> 终端，验证 <em>[java]</em> 和 <em>[javac]</em> 命令是否可用，并显示 JDK 的版本：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-1-1">1</a></span>
+<span class="normal"><a href="#__codelineno-1-2">2</a></span>
+<span class="normal"><a href="#__codelineno-1-3">3</a></span>
+<span class="normal"><a href="#__codelineno-1-4">4</a></span>
+<span class="normal"><a href="#__codelineno-1-5">5</a></span>
+<span class="normal"><a href="#__codelineno-1-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1"></a>&gt; java --version
+<a id="__codelineno-1-2" name="__codelineno-1-2"></a>openjdk 25.0.4.1 2026-08-18
+<a id="__codelineno-1-3" name="__codelineno-1-3"></a>OpenJDK Runtime Environment (build 25.0.4.1+1-1-24.04.4-Ubuntu)
+<a id="__codelineno-1-4" name="__codelineno-1-4"></a>OpenJDK 64-Bit Server VM (build 25.0.4.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+<a id="__codelineno-1-5" name="__codelineno-1-5"></a>&gt; javac --version
+<a id="__codelineno-1-6" name="__codelineno-1-6"></a>javac 25.0.4.1
+</code></pre></div></td></tr></table></div>
+<p>这些结果是使用 Ubuntu 的 JDK 包得到的。使用 Temurin 时，第 2 行和第 3 行会列出 <em>[Temurin-25]</em>，具体版本取决于安装日期：补丁更新每季度发布一次。所有 25.0.x 版本的 JDK 都适用于本文档。同一系统上可以并存多个 JDK：<em>[PATH]</em> 中最先找到的那个响应 <em>[java]</em>命令。</p>
+<h3 id="212-jdk-的命令">2.1.2. <span style="color: #1f4d78">JDK 的命令</span></h3>
+<p>JDK 提供了大量命令。下面是我们将要使用的几个：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>命令</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>作用</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[java File.java]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">在内存中编译并执行用源文件编写的程序（Java 11；从 Java 22 起支持多个文件）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[javac -d classes File.java]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译一个或多个源文件，并将生成的 <i>[.class]</i>文件放入 <i>[classes]</i>文件夹</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[java -cp classes ClassName]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">执行已编译类的 <i>[main]</i>方法，该类在类路径（<i><b>[-cp]</b></i>）中查找</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[java -cp &quot;lib/*&quot; File.java]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">执行使用 <i>[lib]</i>文件夹中库（<i>[.jar]</i>文件）的源文件</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[jshell]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">交互式解释器：你输入 Java 语句，立即看到结果</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[jar]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">创建或读取 <i>[.jar]</i>归档文件（包含已编译类的 ZIP 文件）</div></td></tr></table>
+
+<p><em>[jshell]</em>解释器（Java 9）可用于在不编写程序的情况下测试某个方法或表达式：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-2-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-2-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-2-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-2-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-2-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-2-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-2-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-2-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-2-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-2-10">10</a></span>
+<span class="normal"><a href="#__codelineno-2-11">11</a></span>
+<span class="normal"><a href="#__codelineno-2-12">12</a></span>
+<span class="normal"><a href="#__codelineno-2-13">13</a></span>
+<span class="normal"><a href="#__codelineno-2-14">14</a></span>
+<span class="normal"><a href="#__codelineno-2-15">15</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1"></a>&gt; jshell
+<a id="__codelineno-2-2" name="__codelineno-2-2"></a>|  Welcome to JShell -- Version 25.0.4.1
+<a id="__codelineno-2-3" name="__codelineno-2-3"></a>|  For an introduction type: /help intro
+<a id="__codelineno-2-4" name="__codelineno-2-4"></a>
+<a id="__codelineno-2-5" name="__codelineno-2-5"></a>jshell&gt; 1 + 2
+<a id="__codelineno-2-6" name="__codelineno-2-6"></a>$1 ==&gt; 3
+<a id="__codelineno-2-7" name="__codelineno-2-7"></a>
+<a id="__codelineno-2-8" name="__codelineno-2-8"></a>jshell&gt; var s = "Java " + 25
+<a id="__codelineno-2-9" name="__codelineno-2-9"></a>s ==&gt; "Java 25"
+<a id="__codelineno-2-10" name="__codelineno-2-10"></a>
+<a id="__codelineno-2-11" name="__codelineno-2-11"></a>jshell&gt; s.length()
+<a id="__codelineno-2-12" name="__codelineno-2-12"></a>$3 ==&gt; 7
+<a id="__codelineno-2-13" name="__codelineno-2-13"></a>
+<a id="__codelineno-2-14" name="__codelineno-2-14"></a>jshell&gt; /exit
+<a id="__codelineno-2-15" name="__codelineno-2-15"></a>|  Goodbye
+</code></pre></div></td></tr></table></div>
+<h2 id="22-maven">2.2. <span style="color: #2e74b5">Maven</span></h2>
+<h3 id="221-安装">2.2.1. <span style="color: #1f4d78">安装</span></h3>
+<p>真正的 Java 应用程序会使用不属于 JDK 的<strong>库</strong> ：数据库驱动程序、测试框架、Hibernate、Spring……它们以 <em>[.jar]</em>归档文件的形式通过公共仓库 <strong>Maven Central</strong> （<a href="https://central.sonatype.com/"><u><span style="color: #0563c1">https://central.sonatype.com</span></u></a>）发布。像 <strong>Maven</strong> 这样的构建工具读取项目的 <em>[pom.xml]</em>文件，确定它需要哪些库，下载它们（连同它们所依赖的库），然后编译、测试并打包项目。另一个广泛使用的工具 <strong>Gradle</strong>具有相同的功能；本文档使用 Maven。</p>
+<p>Maven 可从<a href="https://maven.apache.org/download.cgi"><u><span style="color: #0563c1"> https://maven.apache.org/download.cgi</span></u></a>下载，为 ZIP 归档文件（<em>[apache-maven-3.9.x-bin.zip]</em>）。将其解压到某个文件夹中，例如 <em>[C:\Program Files\apache-maven-3.9.11]</em>，并将其子文件夹 <em>[bin]</em> 添加到 <em>[PATH]</em> （Windows：“编辑系统环境变量”）。在 Linux 上，Maven 可从发行版仓库获得（<strong><em>[sudo apt install maven]</em></strong>）。在新终端中验证安装：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-3-1">1</a></span>
+<span class="normal"><a href="#__codelineno-3-2">2</a></span>
+<span class="normal"><a href="#__codelineno-3-3">3</a></span>
+<span class="normal"><a href="#__codelineno-3-4">4</a></span>
+<span class="normal"><a href="#__codelineno-3-5">5</a></span>
+<span class="normal"><a href="#__codelineno-3-6">6</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1"></a>&gt; mvn -v
+<a id="__codelineno-3-2" name="__codelineno-3-2"></a>Apache Maven 3.9.11 (3e54c93a704957b63ee3494413a2b544fd3d825b)
+<a id="__codelineno-3-3" name="__codelineno-3-3"></a>Maven home: /opt/maven
+<a id="__codelineno-3-4" name="__codelineno-3-4"></a>Java version: 25.0.4.1, vendor: Ubuntu, runtime: /usr/lib/jvm/java-25-openjdk-amd64
+<a id="__codelineno-3-5" name="__codelineno-3-5"></a>Default locale: en_US, platform encoding: UTF-8
+<a id="__codelineno-3-6" name="__codelineno-3-6"></a>OS name: "linux", version: "6.18.44-fc-v64", arch: "amd64", family: "unix"
+</code></pre></div></td></tr></table></div>
+<p>第 4 行很重要：它显示 Maven 所使用的 JDK，该 JDK 由变量 <em>[JAVA_HOME]</em>指定。它必须是 JDK 25。IDE（IntelliJ IDEA 和 VS Code）的包自带 Maven：如果你不在命令行中使用 Maven，它们就已足够。</p>
+<p>Maven 下载的库存储在<strong>本地</strong>机器的<strong>本地仓库</strong> <em>[%USERPROFILE%\.m2\repository]</em> （Linux、macOS：<em>[~/.m2/repository]</em>）中。它们只下载一次，之后供所有项目使用。因此，第一次构建项目时需要连接互联网。</p>
+<h3 id="222-maven-命令">2.2.2. <span style="color: #1f4d78">Maven 命令</span></h3>
+<p>命令 <em>[mvn]</em> 后面跟一个或多个构建周期的 <strong>阶段</strong> ，或某个插件的 <strong>目标</strong>；它在包含 <em>[pom.xml]</em>文件的文件夹中输入：</p>
+<table class="odt-table" style="border-collapse: collapse; width: 100%; margin-bottom: 1em;"><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>命令</b></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><b>作用</b></div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[mvn compile]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译 <i>[src/main/java]</i>的源代码；类被组织在 <i>[target/classes]</i> 中</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[mvn test]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译并运行 <i>[src/test/java] </i>的单元测试（第 6 章）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[mvn package]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译、测试并创建项目归档文件 <i>[.jar] </i>于 <i>[target]</i> 中</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[mvn install]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">同 <i>[package]</i>，然后将归档文件复制到本地仓库，供其他项目使用（第 6 章）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[mvn clean]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">删除 <i>[target]</i> 文件夹</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[mvn compile exec:java]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">编译并运行项目的主类（<i>[exec-maven-plugin]</i>插件）</div></td></tr><tr><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0"><i><b>[mvn spring-boot:run]</b></i></div></td><td style="border: 1px solid #ddd; padding: 8px; vertical-align: top; text-align: left;"><div style="margin:0 0 0.5em 0">运行 Spring Boot 应用程序（第 13 章）</div></td></tr></table>
+
+<p>各阶段是顺序执行的：运行 <em>[package]</em> 也会触发 <em>[compile]</em> 和 <em>[test]</em>。<strong><em>[-q]</em></strong> （“quiet”）选项会抑制 Maven 的消息，只显示所执行程序的消息；<strong><em>[-Dexec.args=&quot;a b&quot;]</em></strong>选项向由 <strong><em>[exec:java]</em></strong>启动的程序传递参数。</p>
+<h2 id="23-编辑器">2.3. <span style="color: #2e74b5">编辑器</span></h2>
+<h3 id="231-intellij-idea">2.3.1. <span style="color: #1f4d78">IntelliJ IDEA</span></h3>
+<p><a href="https://www.jetbrains.com/idea/"><u><span style="color: #0563c1">IntelliJ IDEA</span></u></a>由 JetBrains 公司出品，是使用最广泛的 Java 编辑器。它的基本功能对本文档来说绰绰有余，并且是免费的。它支持 Maven 项目：选择“File / Open”，然后选择包含 <em>[pom.xml]</em>文件的文件夹；IntelliJ 会下载库、编译项目，并允许你点击其 <em>[main]</em>方法旁边边栏中的绿色三角形来运行类（<em>[Ctrl-Shift-F10]</em>），或点击测试方法旁边的同一个三角形来运行测试。在“File / Project Structure / SDK”中指定要使用的 JDK。</p>
+<p>你可以一次性打开整个 <em>[java-oct-2026]</em> 示例文件夹（“File / Open”）：IntelliJ 会检测到其中所有的 Maven 项目，并在其“Maven”面板中显示。此时需要注意一点。第 10 至 13 章的项目（<em>[Tax] 应用程序</em>的版本 6 至 9）使用来自第 6 章所编写的版本 5 的 <em>[tax-dao], [tax-business], and [tax-ui]</em> 模块。这些不是公共库：只有它们已安装到本地仓库中，Maven 才能找到它们。因此，必须先安装版本 5：在“Maven”面板中，展开 <em>[tax-v5]</em> / “Lifecycle”，双击 <em>[install]</em> （或在 <strong><em>[mvn install]</em></strong> 所在的 <em>[06-architectures/TaxV5]</em>文件夹中输入），然后点击面板中的“Sync All Maven Projects”按钮。第 6 章解释了该命令的作用，以及如果 IntelliJ 仍报告无法解析的依赖项该怎么办。</p>
+<h3 id="232-vs-code">2.3.2. <span style="color: #1f4d78">VS Code</span></h3>
+<p><a href="https://code.visualstudio.com/"><u><span style="color: #0563c1">VS Code</span></u></a>是一款免费的跨平台编辑器。要用 Java 编程，可以安装 Microsoft 的 <strong>Extension Pack for Java</strong> （进入“Extensions”菜单，搜索“Extension Pack for Java”），它包含语言支持、调试器、测试执行和 Maven 支持。它提供：</p>
+<ul>
+<li>语法高亮、代码补全和悬停提示；</li>
+<li>输入时即时检测错误；</li>
+<li>代码导航（F12：转到定义）；</li>
+<li>执行和调试（每个 <em>[main]</em> 方法上方的“Run”和“Debug”链接，或 F5）；</li>
+<li>运行单元测试（“Testing”视图）以及项目的“Maven”视图。</li>
+</ul>
+<p>在 VS Code 中，打开包含程序的<strong>文件夹</strong> （“File / Open Folder”），例如包含本文档示例的 <em>[java-oct-2026]</em>文件夹。内置终端（“Terminal / New Terminal”）让你无需离开编辑器就能输入 <em>[java]</em> 和 <em>[mvn]</em> 命令。</p>
+<h3 id="233-eclipse">2.3.3. <span style="color: #1f4d78">Eclipse</span></h3>
+<p>第三种选择是开源的 <strong>Eclipse</strong> IDE（<a href="https://eclipseide.org/"><u><span style="color: #0563c1">https://eclipseide.org</span></u></a>），它在历史上是第一个主要的 Java IDE，同样可以导入 Maven 项目（“File / Import / Maven / Existing Maven Projects”）。</p>
+<p>在本文档的其余部分，操作都使用 <em>[java]</em>、<em>[javac]</em>和 <em>[mvn]</em>命令来描述，无论使用哪种编辑器，它们产生的结果都相同。</p>
+<h2 id="24-第一个程序紧凑源文件">2.4. <span style="color: #2e74b5">第一个程序：紧凑源文件</span></h2>
+<h3 id="241-程序">2.4.1. <span style="color: #1f4d78">程序</span></h3>
+<p>从 Java 25 开始，Java 程序可以是一个只包含单个 <em>[main]</em>方法的简单文件，无需类声明。这称为“<strong>紧凑源文件</strong>”。我们来创建下面的文件 <em>[Hello.java]</em>：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1">1</a></span>
+<span class="normal"><a href="#__codelineno-4-2">2</a></span>
+<span class="normal"><a href="#__codelineno-4-3">3</a></span>
+<span class="normal"><a href="#__codelineno-4-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="c1">// 第一个 Java 程序：精简源文件</span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="w">    </span><span class="n">IO</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1st try with Java 25"</span><span class="p">);</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>并运行它：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-5-1">1</a></span>
+<span class="normal"><a href="#__codelineno-5-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1"></a>&gt; java Hello.java
+<a id="__codelineno-5-2" name="__codelineno-5-2"></a>1st try with Java 25
+</code></pre></div></td></tr></table></div>
+<p>说明：</p>
+<ul>
+<li>第 1 行：注释。<em>[//]</em> 之后直到行尾的所有内容都会被编译器忽略；</li>
+<li>第 2 行：<em>[main]</em>方法，即程序的入口点。在紧凑源文件中，它不需要声明在类中，也不必是 <em>[public]</em> 和 <em>[static]</em>，也不必接收程序的参数；我们将在第 3 章看到，编译器会自行把它包装进一个类中；</li>
+<li>第 3 行：程序唯一的语句：它在屏幕上输出一行文本。<em>[IO]</em> 类（Java 25）提供了简单的方法，用于向屏幕写入（<em>[print]</em>、<em>[println]</em>）以及从键盘读取（<em>[readln]</em>）；</li>
+<li>命令 <strong><em>[java Hello.java]</em></strong> 在内存中编译程序——不创建 <em>[.class]</em>文件——然后执行它。这种直接运行源文件的能力是在 Java 11 中引入的。</li>
+</ul>
+<p>文件名必须是有效的 Java 标识符：<em>[Hello.java]</em> 或 <em>[Basics01.java]</em> 是可以接受的，但 <em>[basics-01.java]</em> 会被编译器拒绝（<em>[bad file name]</em>），因为文件名会成为所生成类的名称。按照惯例，类名——因此也包括文件名——以大写字母开头。</p>
+<p>你也可以用 <em>[javac]</em>编译程序，它会生成一个 <em>[.class]</em>文件，然后运行这个已编译的文件：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-6-1">1</a></span>
+<span class="normal"><a href="#__codelineno-6-2">2</a></span>
+<span class="normal"><a href="#__codelineno-6-3">3</a></span>
+<span class="normal"><a href="#__codelineno-6-4">4</a></span>
+<span class="normal"><a href="#__codelineno-6-5">5</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1"></a>&gt; javac -d classes Hello.java
+<a id="__codelineno-6-2" name="__codelineno-6-2"></a>&gt; dir classes (list of files)
+<a id="__codelineno-6-3" name="__codelineno-6-3"></a>Hello.class
+<a id="__codelineno-6-4" name="__codelineno-6-4"></a>&gt; java -cp classes Hello
+<a id="__codelineno-6-5" name="__codelineno-6-5"></a>1st try with Java 25
+</code></pre></div></td></tr></table></div>
+<p>文件 <em>[Hello.class]</em> 包含编译器生成的 <em>[Hello]</em>类的字节码。命令 <strong><em>[java -cp classes Hello]</em></strong> 指示虚拟机执行位于 <em>[classes]</em>文件夹中的类 <em>[Hello]</em>的 <em>[main]</em>方法。</p>
+<p>紧凑源文件适合小型程序，我们的大部分示例都会使用它们。当程序需要外部库时，如果你已把该库（以及它所依赖的库）的 <strong><em>[java -cp &quot;lib/*&quot; Program.java]</em></strong> <em>[.jar]</em>归档文件复制到 <em>[lib]</em>文件夹中，仍然可以用该命令启动它。但手工收集这些归档文件很快就会变得繁琐，所以我们将编写 Maven 项目。</p>
+<p>在 Windows 上，由 <em>[IO.println]</em> 或 <em>[System.out.println]</em> 写出的带重音字符能在终端中正确显示：Java 会把文本转换为终端的编码。源文件必须保存为 UTF-8，这是 VS Code 和 IntelliJ IDEA 的默认编码，也是自 Java 18 起编译器所假定的编码。</p>
+<h2 id="25-maven-项目">2.5. <span style="color: #2e74b5">Maven 项目</span></h2>
+<h3 id="251-项目结构">2.5.1. <span style="color: #1f4d78">项目结构</span></h3>
+<p><strong>Maven 项目</strong> 是一个文件夹，其中包含一个 <em>[pom.xml]</em>文件（“Project Object Model”）以及按标准目录结构组织的源文件。<em>[02-installation]</em>文件夹中的 <em>[FirstProgram]</em>项目如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-7-1">1</a></span>
+<span class="normal"><a href="#__codelineno-7-2">2</a></span>
+<span class="normal"><a href="#__codelineno-7-3">3</a></span>
+<span class="normal"><a href="#__codelineno-7-4">4</a></span>
+<span class="normal"><a href="#__codelineno-7-5">5</a></span>
+<span class="normal"><a href="#__codelineno-7-6">6</a></span>
+<span class="normal"><a href="#__codelineno-7-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1"></a>FirstProgram/
+<a id="__codelineno-7-2" name="__codelineno-7-2"></a>├── pom.xml
+<a id="__codelineno-7-3" name="__codelineno-7-3"></a>└── src/
+<a id="__codelineno-7-4" name="__codelineno-7-4"></a>    └── main/
+<a id="__codelineno-7-5" name="__codelineno-7-5"></a>        └── java/
+<a id="__codelineno-7-6" name="__codelineno-7-6"></a>            └── first/
+<a id="__codelineno-7-7" name="__codelineno-7-7"></a>                └── Main.java
+</code></pre></div></td></tr></table></div>
+<ul>
+<li><em>[src/main/java]</em> 包含程序的源文件；<em>[src/main/resources]</em> 包含要与已编译类放在一起的数据或配置文件；<em>[src/test/java]</em> 包含测试（第 6 章）；</li>
+<li>在 <em>[src/main/java]</em>下，文件夹结构与<strong>包</strong> （第 4 章）的结构一一对应：类 <em>[first.Main]</em> 位于文件夹 [first]中。</li>
+</ul>
+<p>你可以手动创建此目录结构，也可以让 IDE 来创建（IntelliJ：“File / New / Project”，选择“Maven”作为构建系统）。<em>[pom.xml]</em>文件如下：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-8-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-8-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-8-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-8-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-8-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-8-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-8-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-8-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-8-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-8-10">10</a></span>
+<span class="normal"><a href="#__codelineno-8-11">11</a></span>
+<span class="normal"><a href="#__codelineno-8-12">12</a></span>
+<span class="normal"><a href="#__codelineno-8-13">13</a></span>
+<span class="normal"><a href="#__codelineno-8-14">14</a></span>
+<span class="normal"><a href="#__codelineno-8-15">15</a></span>
+<span class="normal"><a href="#__codelineno-8-16">16</a></span>
+<span class="normal"><a href="#__codelineno-8-17">17</a></span>
+<span class="normal"><a href="#__codelineno-8-18">18</a></span>
+<span class="normal"><a href="#__codelineno-8-19">19</a></span>
+<span class="normal"><a href="#__codelineno-8-20">20</a></span>
+<span class="normal"><a href="#__codelineno-8-21">21</a></span>
+<span class="normal"><a href="#__codelineno-8-22">22</a></span>
+<span class="normal"><a href="#__codelineno-8-23">23</a></span>
+<span class="normal"><a href="#__codelineno-8-24">24</a></span>
+<span class="normal"><a href="#__codelineno-8-25">25</a></span>
+<span class="normal"><a href="#__codelineno-8-26">26</a></span>
+<span class="normal"><a href="#__codelineno-8-27">27</a></span>
+<span class="normal"><a href="#__codelineno-8-28">28</a></span>
+<span class="normal"><a href="#__codelineno-8-29">29</a></span>
+<span class="normal"><a href="#__codelineno-8-30">30</a></span>
+<span class="normal"><a href="#__codelineno-8-31">31</a></span>
+<span class="normal"><a href="#__codelineno-8-32">32</a></span>
+<span class="normal"><a href="#__codelineno-8-33">33</a></span>
+<span class="normal"><a href="#__codelineno-8-34">34</a></span>
+<span class="normal"><a href="#__codelineno-8-35">35</a></span>
+<span class="normal"><a href="#__codelineno-8-36">36</a></span>
+<span class="normal"><a href="#__codelineno-8-37">37</a></span>
+<span class="normal"><a href="#__codelineno-8-38">38</a></span>
+<span class="normal"><a href="#__codelineno-8-39">39</a></span>
+<span class="normal"><a href="#__codelineno-8-40">40</a></span>
+<span class="normal"><a href="#__codelineno-8-41">41</a></span>
+<span class="normal"><a href="#__codelineno-8-42">42</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1"></a><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<a id="__codelineno-8-2" name="__codelineno-8-2"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+<a id="__codelineno-8-3" name="__codelineno-8-3"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<a id="__codelineno-8-4" name="__codelineno-8-4"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+<a id="__codelineno-8-5" name="__codelineno-8-5"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+<a id="__codelineno-8-6" name="__codelineno-8-6"></a>
+<a id="__codelineno-8-7" name="__codelineno-8-7"></a><span class="w">    </span><span class="cm">&lt;!-- 项目坐标 --&gt;</span>
+<a id="__codelineno-8-8" name="__codelineno-8-8"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>examples.installation<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-8-9" name="__codelineno-8-9"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>first-program<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-8-10" name="__codelineno-8-10"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-8-11" name="__codelineno-8-11"></a>
+<a id="__codelineno-8-12" name="__codelineno-8-12"></a><span class="w">    </span><span class="nt">&lt;properties&gt;</span>
+<a id="__codelineno-8-13" name="__codelineno-8-13"></a><span class="w">        </span><span class="cm">&lt;!-- 目标 Java 版本和源文件编码 --&gt;</span>
+<a id="__codelineno-8-14" name="__codelineno-8-14"></a><span class="w">        </span><span class="nt">&lt;maven.compiler.release&gt;</span>25<span class="nt">&lt;/maven.compiler.release&gt;</span>
+<a id="__codelineno-8-15" name="__codelineno-8-15"></a><span class="w">        </span><span class="nt">&lt;project.build.sourceEncoding&gt;</span>UTF-8<span class="nt">&lt;/project.build.sourceEncoding&gt;</span>
+<a id="__codelineno-8-16" name="__codelineno-8-16"></a><span class="w">    </span><span class="nt">&lt;/properties&gt;</span>
+<a id="__codelineno-8-17" name="__codelineno-8-17"></a>
+<a id="__codelineno-8-18" name="__codelineno-8-18"></a><span class="w">    </span><span class="nt">&lt;build&gt;</span>
+<a id="__codelineno-8-19" name="__codelineno-8-19"></a><span class="w">        </span><span class="nt">&lt;plugins&gt;</span>
+<a id="__codelineno-8-20" name="__codelineno-8-20"></a><span class="w">            </span><span class="cm">&lt;!-- 编译器，显示所有警告 --&gt;</span>
+<a id="__codelineno-8-21" name="__codelineno-8-21"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-8-22" name="__codelineno-8-22"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.apache.maven.plugins<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-8-23" name="__codelineno-8-23"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>maven-compiler-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-8-24" name="__codelineno-8-24"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>3.15.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-8-25" name="__codelineno-8-25"></a><span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-8-26" name="__codelineno-8-26"></a><span class="w">                    </span><span class="nt">&lt;compilerArgs&gt;</span>
+<a id="__codelineno-8-27" name="__codelineno-8-27"></a><span class="w">                        </span><span class="nt">&lt;arg&gt;</span>-Xlint:all<span class="nt">&lt;/arg&gt;</span>
+<a id="__codelineno-8-28" name="__codelineno-8-28"></a><span class="w">                    </span><span class="nt">&lt;/compilerArgs&gt;</span>
+<a id="__codelineno-8-29" name="__codelineno-8-29"></a><span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+<a id="__codelineno-8-30" name="__codelineno-8-30"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<a id="__codelineno-8-31" name="__codelineno-8-31"></a><span class="w">            </span><span class="cm">&lt;!-- mvn exec:java 运行主类 --&gt;</span>
+<a id="__codelineno-8-32" name="__codelineno-8-32"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-8-33" name="__codelineno-8-33"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-8-34" name="__codelineno-8-34"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>exec-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-8-35" name="__codelineno-8-35"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>3.5.1<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-8-36" name="__codelineno-8-36"></a><span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-8-37" name="__codelineno-8-37"></a><span class="w">                    </span><span class="nt">&lt;mainClass&gt;</span>first.Main<span class="nt">&lt;/mainClass&gt;</span>
+<a id="__codelineno-8-38" name="__codelineno-8-38"></a><span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+<a id="__codelineno-8-39" name="__codelineno-8-39"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+<a id="__codelineno-8-40" name="__codelineno-8-40"></a><span class="w">        </span><span class="nt">&lt;/plugins&gt;</span>
+<a id="__codelineno-8-41" name="__codelineno-8-41"></a><span class="w">    </span><span class="nt">&lt;/build&gt;</span>
+<a id="__codelineno-8-42" name="__codelineno-8-42"></a><span class="nt">&lt;/project&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 8–10 行：项目的<strong>坐标</strong>，用于唯一标识项目：组（<em>[groupId]</em>，通常是反向域名，例如 <em>[org.hibernate]</em>）、项目名称（<em>[artifactId]</em>）及其版本。如有需要，其他项目也会用这些标识符来引用本项目，这与引用 Maven Central 中的库的方式类似（第 6 章）；</li>
+<li>第 14 行：代码按 Java 25 编译；</li>
+<li>第 15 行：源文件以 UTF-8 编写；</li>
+<li>第 21–30 行：编译插件，带有选项 <strong><em>[-Xlint:all]，</em></strong>用于启用编译器的所有警告；</li>
+<li>第 32–39 行：<em>[exec-maven-plugin]</em>插件，它允许使用 <strong><em>[mvn exec:java]</em></strong>命令执行项目的主类（在第 37 行指定）。</li>
+</ul>
+<p>这个项目不使用任何库。使用库的项目会用库的坐标在 <em>[&lt;dependencies&gt;]</em>部分中声明它，就像我们从第 5 章开始所做的那样：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-9-1">1</a></span>
+<span class="normal"><a href="#__codelineno-9-2">2</a></span>
+<span class="normal"><a href="#__codelineno-9-3">3</a></span>
+<span class="normal"><a href="#__codelineno-9-4">4</a></span>
+<span class="normal"><a href="#__codelineno-9-5">5</a></span>
+<span class="normal"><a href="#__codelineno-9-6">6</a></span>
+<span class="normal"><a href="#__codelineno-9-7">7</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1"></a><span class="nt">&lt;dependencies&gt;</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2"></a><span class="w">    </span><span class="nt">&lt;dependency&gt;</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3"></a><span class="w">        </span><span class="nt">&lt;groupId&gt;</span>tools.jackson.core<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4"></a><span class="w">        </span><span class="nt">&lt;artifactId&gt;</span>jackson-databind<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5"></a><span class="w">        </span><span class="nt">&lt;version&gt;</span>3.1.5<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6"></a><span class="w">    </span><span class="nt">&lt;/dependency&gt;</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7"></a><span class="nt">&lt;/dependencies&gt;</span>
+</code></pre></div></td></tr></table></div>
+<p>文件 <em>[Main.java]</em> 以标准形式包含程序，带有一个 <em>[public]</em> 类和一个 <em>[public static void main(String[] args)]</em>方法：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-10-1">1</a></span>
+<span class="normal"><a href="#__codelineno-10-2">2</a></span>
+<span class="normal"><a href="#__codelineno-10-3">3</a></span>
+<span class="normal"><a href="#__codelineno-10-4">4</a></span>
+<span class="normal"><a href="#__codelineno-10-5">5</a></span>
+<span class="normal"><a href="#__codelineno-10-6">6</a></span>
+<span class="normal"><a href="#__codelineno-10-7">7</a></span>
+<span class="normal"><a href="#__codelineno-10-8">8</a></span>
+<span class="normal"><a href="#__codelineno-10-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">first</span><span class="p">;</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3"></a><span class="c1">// [FirstProgram] 项目的主程序</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">Main</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5"></a>
+<a id="__codelineno-10-6" name="__codelineno-10-6"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"1st try with a Maven project / Java 25"</span><span class="p">);</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 1 行：该类属于包 <em>[first]；其全名是 [first.Main]</em>；</li>
+<li>第 4–9 行：类 <em>[Main]</em>。一个源文件至多包含一个公共类，该类以文件名命名；</li>
+<li>第 6–8 行：<em>[main]</em>方法，采用自 Java 第一个版本以来一直沿用的形式。我们将在第 3 章比较这两种形式。</li>
+</ul>
+<h3 id="252-编译和执行">2.5.2. <span style="color: #1f4d78">编译和执行</span></h3>
+<p>在项目文件夹中输入命令 <strong><em>[mvn compile]</em></strong>即可编译项目：Maven 会按需下载所需的插件，然后编译 <em>[src/main/java]</em>文件，并把生成的类放在 <em>[target/classes]</em>文件夹中，同时保留包的层次结构（<em>[target/classes/first/Main.class]</em>）。<strong><em>[mvn compile exec:java]</em></strong>命令先编译项目然后运行它；使用 <strong><em>[-q]</em></strong>选项时，只显示程序的输出：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1">1</a></span>
+<span class="normal"><a href="#__codelineno-11-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a>&gt; mvn -q compile exec:java
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>1st try with a Maven project / Java 25
+</code></pre></div></td></tr></table></div>
+<p>项目编译完成后，你也可以用 <em>[java]</em>命令直接运行该类，并指定类所在的位置：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-12-1">1</a></span>
+<span class="normal"><a href="#__codelineno-12-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1"></a>&gt; java -cp target/classes first.Main
+<a id="__codelineno-12-2" name="__codelineno-12-2"></a>1st try with a Maven project / Java 25
+</code></pre></div></td></tr></table></div>
+<p>可以放心地删除 <em>[target]</em>文件夹（<strong><em>[mvn clean]</em></strong>）：下次编译时会重新创建它。命令 <strong><em>[mvn package]</em></strong> 还会生成归档文件 <em>[target/first-program-1.0.jar]</em>，可以用 <strong><em>[java -cp target/first-program-1.0.jar first.Main]</em></strong>执行它：这就是交付 Java 程序的格式。</p>
+<h2 id="26-多模块项目">2.6. <span style="color: #2e74b5">多模块项目</span></h2>
+<h3 id="261-聚合项目">2.6.1. <span style="color: #1f4d78">聚合项目</span></h3>
+<p>一个 Maven 项目可以把其他几个项目聚合在一起，这些项目称为它的<strong>模块</strong>。<em>[02-installation]</em>文件夹包含一个名为 <em>[pom.xml]</em> 的文件，把它的两个项目聚合在一起：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-13-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-13-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-13-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-13-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-13-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-13-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-13-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-13-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-13-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-13-10">10</a></span>
+<span class="normal"><a href="#__codelineno-13-11">11</a></span>
+<span class="normal"><a href="#__codelineno-13-12">12</a></span>
+<span class="normal"><a href="#__codelineno-13-13">13</a></span>
+<span class="normal"><a href="#__codelineno-13-14">14</a></span>
+<span class="normal"><a href="#__codelineno-13-15">15</a></span>
+<span class="normal"><a href="#__codelineno-13-16">16</a></span>
+<span class="normal"><a href="#__codelineno-13-17">17</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1"></a><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2"></a><span class="cm">&lt;!-- “聚合”项目：将文件夹中的各项目归在一起一并构建 --&gt;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3"></a><span class="nt">&lt;project</span><span class="w"> </span><span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span>
+<a id="__codelineno-13-4" name="__codelineno-13-4"></a><span class="w">         </span><span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5"></a><span class="w">         </span><span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd"</span><span class="nt">&gt;</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6"></a><span class="w">    </span><span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7"></a>
+<a id="__codelineno-13-8" name="__codelineno-13-8"></a><span class="w">    </span><span class="nt">&lt;groupId&gt;</span>examples.installation<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-13-9" name="__codelineno-13-9"></a><span class="w">    </span><span class="nt">&lt;artifactId&gt;</span>installation<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10"></a><span class="w">    </span><span class="nt">&lt;version&gt;</span>1.0<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11"></a><span class="w">    </span><span class="nt">&lt;packaging&gt;</span>pom<span class="nt">&lt;/packaging&gt;</span>
+<a id="__codelineno-13-12" name="__codelineno-13-12"></a>
+<a id="__codelineno-13-13" name="__codelineno-13-13"></a><span class="w">    </span><span class="nt">&lt;modules&gt;</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14"></a><span class="w">        </span><span class="nt">&lt;module&gt;</span>FirstProgram<span class="nt">&lt;/module&gt;</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15"></a><span class="w">        </span><span class="nt">&lt;module&gt;</span>TwoHands<span class="nt">&lt;/module&gt;</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16"></a><span class="w">    </span><span class="nt">&lt;/modules&gt;</span>
+<a id="__codelineno-13-17" name="__codelineno-13-17"></a><span class="nt">&lt;/project&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 11 行：这个项目不生成 <em>[.jar]</em>归档文件：它只用于聚合其他项目（<em>[pom]</em>）；</li>
+<li>第 13–16 行：各个模块，由它们的文件夹名称标识。</li>
+</ul>
+<p>在 <em>[02-installation]</em>文件夹中，<strong><em>[mvn compile]</em></strong>命令会编译这两个项目；在 IDE 中打开这个文件夹，可以同时看到这两个项目。在第 6 章中我们将看到，父项目还可以把公共配置（库版本、编译器选项）传递给它的模块。</p>
+<h3 id="262-包含多个-main-方法的项目">2.6.2. <span style="color: #1f4d78">包含多个 <code>main</code> 方法的项目</span></h3>
+<p>一个项目可以包含多个类，每个类都有一个 <em><code>[main]</code></em> 方法：每个方法都是一个可能的入口点，要执行哪个类在运行时选择。项目 <code>[TwoHands]</code> 包含两个类。<em>[P1]</em> 类：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-14-1">1</a></span>
+<span class="normal"><a href="#__codelineno-14-2">2</a></span>
+<span class="normal"><a href="#__codelineno-14-3">3</a></span>
+<span class="normal"><a href="#__codelineno-14-4">4</a></span>
+<span class="normal"><a href="#__codelineno-14-5">5</a></span>
+<span class="normal"><a href="#__codelineno-14-6">6</a></span>
+<span class="normal"><a href="#__codelineno-14-7">7</a></span>
+<span class="normal"><a href="#__codelineno-14-8">8</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1"></a><span class="kn">package</span><span class="w"> </span><span class="nn">twohands</span><span class="p">;</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2"></a>
+<a id="__codelineno-14-3" name="__codelineno-14-3"></a><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">P1</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-4" name="__codelineno-14-4"></a>
+<a id="__codelineno-14-5" name="__codelineno-14-5"></a><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6"></a><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"main of the class P1"</span><span class="p">);</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7"></a><span class="w">    </span><span class="p">}</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8"></a><span class="p">}</span>
+</code></pre></div></td></tr></table></div>
+<p>以及类 <em>[P2]</em>，它除了名称之外与前者完全相同。<em>[java]</em> 命令执行指定的类：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-15-1">1</a></span>
+<span class="normal"><a href="#__codelineno-15-2">2</a></span>
+<span class="normal"><a href="#__codelineno-15-3">3</a></span>
+<span class="normal"><a href="#__codelineno-15-4">4</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1"></a>&gt; java -cp target/classes twohands.P1
+<a id="__codelineno-15-2" name="__codelineno-15-2"></a>main of the class P1
+<a id="__codelineno-15-3" name="__codelineno-15-3"></a>&gt; java -cp target/classes twohands.P2
+<a id="__codelineno-15-4" name="__codelineno-15-4"></a>main of the class P2
+</code></pre></div></td></tr></table></div>
+<p>对于命令 <strong><em>[mvn exec:java]</em></strong>，项目文件 <em>[pom.xml]</em> 指定要执行的类：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-16-1">1</a></span>
+<span class="normal"><a href="#__codelineno-16-2">2</a></span>
+<span class="normal"><a href="#__codelineno-16-3">3</a></span>
+<span class="normal"><a href="#__codelineno-16-4">4</a></span>
+<span class="normal"><a href="#__codelineno-16-5">5</a></span>
+<span class="normal"><a href="#__codelineno-16-6">6</a></span>
+<span class="normal"><a href="#__codelineno-16-7">7</a></span>
+<span class="normal"><a href="#__codelineno-16-8">8</a></span>
+<span class="normal"><a href="#__codelineno-16-9">9</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1"></a><span class="w">            </span><span class="cm">&lt;!-- 其 main 方法由 mvn exec:java 运行的类 --&gt;</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2"></a><span class="w">            </span><span class="nt">&lt;plugin&gt;</span>
+<a id="__codelineno-16-3" name="__codelineno-16-3"></a><span class="w">                </span><span class="nt">&lt;groupId&gt;</span>org.codehaus.mojo<span class="nt">&lt;/groupId&gt;</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4"></a><span class="w">                </span><span class="nt">&lt;artifactId&gt;</span>exec-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5"></a><span class="w">                </span><span class="nt">&lt;version&gt;</span>3.5.1<span class="nt">&lt;/version&gt;</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6"></a><span class="w">                </span><span class="nt">&lt;configuration&gt;</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7"></a><span class="w">                    </span><span class="nt">&lt;mainClass&gt;</span>twohands.P2<span class="nt">&lt;/mainClass&gt;</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8"></a><span class="w">                </span><span class="nt">&lt;/configuration&gt;</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9"></a><span class="w">            </span><span class="nt">&lt;/plugin&gt;</span>
+</code></pre></div></td></tr></table></div>
+<ul>
+<li>第 7 行：被执行的 <em>[main]</em> 方法属于类 <em>[twohands.P2]</em> （完整的类名，包含包名）。</li>
+</ul>
+<p>结果：</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-17-1">1</a></span>
+<span class="normal"><a href="#__codelineno-17-2">2</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1"></a>&gt; mvn -q compile exec:java
+<a id="__codelineno-17-2" name="__codelineno-17-2"></a>main of the class P2
+</code></pre></div></td></tr></table></div>
+<p>你可以在不修改 <em>[pom.xml]</em>文件的情况下选择另一个类：<strong><em>[mvn -q exec:java -Dexec.mainClass=twohands.P1]</em></strong>。</p>
+<h2 id="27-文档中的示例">2.7. <span style="color: #2e74b5">文档中的示例</span></h2>
+<p>要运行本文档中的示例：</p>
+<ul>
+<li>下载 <em>[java-oct-2026]</em>文件夹（链接在文档开头）；</li>
+<li>在 VS Code 中打开它（“File / Open Folder”），或者对于某个具体的 Maven 项目，在 IntelliJ IDEA 中打开它的文件夹；</li>
+<li>在位于某一章文件夹中的终端里，使用 <strong><em>[java Name.java]</em></strong>运行紧凑源文件，或在项目文件夹中使用 <strong><em>[mvn -q compile exec:java]</em></strong> 运行 Maven 项目（每章正文都会给出确切的命令）。</li>
+</ul>
+<p>第 10 章和第 11 章使用名为 MySQL 的数据库；附录中介绍了如何随 <em>[Laragon]</em> 一起安装 MySQL。</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner">
+
+      <div>
+        <a href="https://stahe.github.io" target="_blank">
+          https://stahe.github.io
+        </a>
+        <br>
+        本课程由 Anthropic 的 AI <strong>Claude</strong> 应 <strong>Serge Tahé</strong> 的请求编写，根据
+        <em>知识共享署名 – 禁止商业使用 –
+        共享 3.0 未本地化版</em>的条款向公众开放。
+
+      </div>
+
+    </div>
+  </div>
+
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": ".", "features": ["navigation.sections", "navigation.indexes", "navigation.expand", "toc.integrate", "navigation.top"], "search": "assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="javascripts/focus.js"></script>
+      
+    
+  </body>
+</html>
